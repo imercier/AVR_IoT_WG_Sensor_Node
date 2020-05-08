@@ -1,1 +1,4 @@
 gcc/
+doxygen.log
+html/
+xml/

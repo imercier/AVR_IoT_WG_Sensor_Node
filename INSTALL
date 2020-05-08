@@ -1,5 +1,3 @@
-#! /bin/bash
-
 #build
 sudo apt-get install -y gcc-avr avr-libc doxygen
 cd gcc
@@ -12,3 +10,20 @@ xdg-open html/index.html &
 #RUN
 echo "CMD:SEND_UART=wifi <wifi_essid>,<wifi_wpa_password>,2" > /media/user/CURIOSITY/WIFI.CFG
 cp AtmelStart.hex /media/user/CURIOSITY/
+
+
+
+#DEBUG
+diff --git a/config/IoT_Sensor_Node_config.h b/config/IoT_Sensor_Node_config.h
+index 251660e..d4940ff 100644
+--- a/config/IoT_Sensor_Node_config.h
++++ b/config/IoT_Sensor_Node_config.h
+@@ -47,7 +47,7 @@
+ // <q> Enable debug messages:
+ // <i> Check to enable debug messages
+ // <id> debug_msg
+-#define CFG_DEBUG_MSG 0
++#define CFG_DEBUG_MSG 1
+
+screen /dev/ttyACM0 9600
+debug 4
