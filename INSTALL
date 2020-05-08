@@ -1,0 +1,14 @@
+#! /bin/bash
+
+#build
+sudo apt-get install -y gcc-avr avr-libc doxygen
+cd gcc
+make
+
+#DOC
+doxygen ./doxygen/generator/doxyfile.doxygen
+xdg-open html/index.html &
+
+#RUN
+echo "CMD:SEND_UART=wifi <wifi_essid>,<wifi_wpa_password>,2" > /media/user/CURIOSITY/WIFI.CFG
+cp AtmelStart.hex /media/user/CURIOSITY/
